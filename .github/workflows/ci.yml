@@ -138,6 +138,13 @@ jobs:
           echo "$KUBE_SECRET" > kubeconfig.yaml
           export KUBECONFIG=kubeconfig.yaml
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
       - name: Update image tags in manifests
         run: |
           sed -i "s|YOUR_REGISTRY/ferrari-frontend:latest|${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE }}:sha-${{ github.sha }}|g" k8s/frontend-deployment.yaml
