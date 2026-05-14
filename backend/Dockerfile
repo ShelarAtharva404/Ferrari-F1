@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20
 WORKDIR /app
 
 # Install dependencies
@@ -9,8 +9,7 @@ RUN npm ci --only=production
 COPY . .
 
 # Non-root user
-RUN addgroup -S ferrari && adduser -S ferrari -G ferrari
-USER ferrari
+USER node
 
 EXPOSE 5000
 ENV NODE_ENV=production

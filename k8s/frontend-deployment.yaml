@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: YOUR_REGISTRY/ferrari-frontend:latest
+          image: ghcr.io/shelaratharva404/ferrari-f1/ferrari-frontend:latest
           ports:
             - containerPort: 80
           resources:
