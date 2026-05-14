@@ -1,0 +1,202 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  transition: all var(--transition-base);
+  padding: 0;
+}
+
+.navbar--animate {
+  animation: navSlideDown 0.6s ease-out;
+}
+
+@keyframes navSlideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.navbar__mobile--open {
+  animation: mobileSlide 0.3s ease-out;
+}
+
+@keyframes mobileSlide {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.navbar--scrolled {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(220, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  height: 70px;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: 100%;
+}
+
+/* Logo */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar__logo-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--ferrari-red);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(220, 0, 0, 0.5);
+}
+
+.logo-sf {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-scuderia {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--ferrari-gray);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.logo-ferrari {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--ferrari-white);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin-left: auto;
+}
+
+.navbar__link {
+  position: relative;
+  display: block;
+  padding: 8px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ferrari-gray);
+  transition: color var(--transition-fast);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--ferrari-white);
+}
+
+.navbar__link-underline {
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: var(--ferrari-red);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+  border-radius: 1px;
+}
+
+.navbar__link:hover .navbar__link-underline,
+.navbar__link--active .navbar__link-underline {
+  transform: scaleX(1);
+}
+
+.navbar__link--active {
+  color: var(--ferrari-white);
+}
+
+.navbar__cta {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+  padding: 10px 20px;
+}
+
+/* Toggle */
+.navbar__toggle {
+  display: none;
+  background: transparent;
+  color: var(--ferrari-white);
+  font-size: 1.3rem;
+  padding: 8px;
+  border-radius: 4px;
+  transition: color var(--transition-fast);
+  margin-left: auto;
+}
+.navbar__toggle:hover { color: var(--ferrari-red); }
+
+/* Mobile */
+.navbar__mobile {
+  background: rgba(10, 10, 10, 0.98);
+  border-top: 1px solid var(--ferrari-border);
+  overflow: hidden;
+}
+
+.navbar__mobile ul {
+  list-style: none;
+  padding: 16px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.navbar__mobile-link {
+  display: block;
+  padding: 12px 16px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ferrari-gray);
+  border-radius: 4px;
+  transition: all var(--transition-fast);
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link.active {
+  color: var(--ferrari-white);
+  background: rgba(220, 0, 0, 0.1);
+  border-left: 2px solid var(--ferrari-red);
+}
+
+@media (max-width: 1024px) {
+  .navbar__cta { display: none; }
+  .navbar__links { display: none; }
+  .navbar__toggle { display: flex; }
+  .navbar__inner { gap: 0; }
+  .navbar__logo { margin-right: auto; }
+}

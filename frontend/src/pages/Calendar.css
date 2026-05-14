@@ -1,0 +1,200 @@
+.next-race-banner {
+  background: linear-gradient(135deg, var(--ferrari-red-dark), var(--ferrari-red));
+  padding: 60px 0;
+}
+
+.next-race-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.next-race__eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.next-race__name {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.next-race__meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  opacity: 0.85;
+}
+
+.next-race__meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.countdown {
+  display: flex;
+  gap: 16px;
+}
+
+.countdown__unit {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  padding: 16px 20px;
+  text-align: center;
+  min-width: 70px;
+}
+
+.countdown__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.countdown__label {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* Filters */
+.calendar-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.calendar-filter-btn {
+  padding: 10px 24px;
+  border-radius: 4px;
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  color: var(--ferrari-gray);
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+}
+
+.calendar-filter-btn:hover,
+.calendar-filter-btn.active {
+  background: var(--ferrari-red);
+  border-color: var(--ferrari-red);
+  color: white;
+}
+
+/* Race List */
+.calendar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.race-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 6px;
+  padding: 16px 24px;
+  transition: all var(--transition-base);
+}
+
+.race-row:hover {
+  border-color: var(--ferrari-red);
+  background: rgba(220, 0, 0, 0.05);
+  transform: translateX(4px);
+}
+
+.race-row.completed {
+  opacity: 0.75;
+}
+
+.race-row.upcoming {
+  border-left: 3px solid var(--ferrari-red);
+}
+
+.race-row__round { flex-shrink: 0; }
+
+.race-row__round-num {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ferrari-gray-dark);
+  letter-spacing: 1px;
+}
+
+.race-row__flag {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.race-row__main { flex: 1; min-width: 0; }
+
+.race-row__name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.race-row__circuit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--ferrari-gray);
+}
+
+.race-row__date {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--ferrari-gray);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.race-row__result { flex-shrink: 0; }
+
+.race-result-badge {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 3px;
+}
+
+.race-result-badge--p1 { background: var(--ferrari-gold); color: black; }
+.race-result-badge--p2 { background: #c0c0c0; color: black; }
+.race-result-badge--p3 { background: #cd7f32; color: white; }
+.race-result-badge--p4 { background: var(--ferrari-card); border: 1px solid var(--ferrari-border); color: var(--ferrari-gray); }
+
+@media (max-width: 768px) {
+  .race-row { flex-wrap: wrap; gap: 12px; }
+  .race-row__date { order: 2; }
+  .countdown { flex-wrap: wrap; justify-content: center; }
+  .next-race-inner { flex-direction: column; }
+}

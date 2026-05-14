@@ -1,0 +1,15 @@
+{
+  "name": "ferrari-f1-backend",
+  "version": "1.0.0",
+  "description": "Ferrari F1 Fan Portal — REST API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node seed/seed.js"
+  },
+  "keywords": ["ferrari", "f1", "express", "mongodb"],
+  "author": "Ferrari F1 Dev Team",
+  "license": "MIT",
+  "engines": { "node": ">=18.0.0" }
+}

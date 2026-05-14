@@ -1,0 +1,201 @@
+.driver-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.driver-profile--reverse { direction: rtl; }
+.driver-profile--reverse > * { direction: ltr; }
+
+.driver-profile__img-wrap {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.driver-profile__img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  filter: saturate(1.1);
+}
+
+.driver-profile__number-bg {
+  position: absolute;
+  top: 0; right: 0;
+  font-family: var(--font-heading);
+  font-size: 12rem;
+  font-weight: 900;
+  color: rgba(220, 0, 0, 0.1);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.driver-profile__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.driver-profile__nationality {
+  font-size: 0.875rem;
+  color: var(--ferrari-gray);
+}
+
+.driver-profile__name {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.driver-profile__bio {
+  font-size: 0.95rem;
+  color: var(--ferrari-gray);
+  line-height: 1.9;
+  margin-bottom: 32px;
+}
+
+.driver-profile__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.driver-stat {
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.driver-stat:hover {
+  border-color: var(--ferrari-red);
+  background: rgba(220,0,0,0.05);
+}
+
+.driver-stat__icon {
+  display: block;
+  font-size: 1rem;
+  color: var(--ferrari-red);
+  margin-bottom: 8px;
+}
+
+.driver-stat__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--ferrari-white);
+  margin-bottom: 4px;
+}
+
+.driver-stat__label {
+  font-size: 0.65rem;
+  color: var(--ferrari-gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.driver-profile__details {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.driver-profile__details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.driver-profile__details span {
+  font-size: 0.7rem;
+  color: var(--ferrari-gray-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.driver-profile__details strong {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* Management */
+.team__management-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.mgmt-card {
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.mgmt-card:hover {
+  border-color: var(--ferrari-red);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-red);
+}
+
+.mgmt-card__img-wrap {
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.mgmt-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  filter: grayscale(20%);
+}
+
+.mgmt-card:hover .mgmt-card__img { transform: scale(1.05); filter: grayscale(0); }
+
+.mgmt-card__info {
+  padding: 20px;
+}
+
+.mgmt-card__name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.mgmt-card__role {
+  font-size: 0.75rem;
+  color: var(--ferrari-red);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 1024px) {
+  .driver-profile { grid-template-columns: 1fr; gap: 40px; }
+  .driver-profile--reverse { direction: ltr; }
+  .team__management-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .driver-profile__stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .team__management-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,240 @@
+.footer {
+  background: var(--ferrari-dark);
+  border-top: 1px solid var(--ferrari-border);
+}
+
+/* Newsletter */
+.footer__newsletter {
+  background: linear-gradient(135deg, var(--ferrari-red-dark), var(--ferrari-red));
+  padding: 50px 0;
+}
+
+.footer__newsletter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer__newsletter-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.footer__newsletter-sub {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  max-width: 400px;
+}
+
+.footer__newsletter-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer__newsletter-input {
+  padding: 14px 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  width: 280px;
+  transition: all var(--transition-base);
+}
+
+.footer__newsletter-input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.footer__newsletter-input:focus {
+  outline: none;
+  border-color: white;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.footer__newsletter-form .btn-primary {
+  background: var(--ferrari-black);
+  color: white;
+  box-shadow: none;
+}
+.footer__newsletter-form .btn-primary:hover {
+  background: #1a1a1a;
+}
+
+/* Main */
+.footer__main {
+  padding: 80px 0 60px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* Brand */
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer__logo-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--ferrari-red);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  color: white;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.footer__logo-scuderia {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--ferrari-gray);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.footer__logo-ferrari {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer__brand-text {
+  font-size: 0.875rem;
+  color: var(--ferrari-gray);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--ferrari-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ferrari-gray);
+  font-size: 0.9rem;
+  transition: all var(--transition-base);
+}
+
+.footer__social-link:hover {
+  border-color: var(--ferrari-red);
+  color: var(--ferrari-red);
+  background: rgba(220, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Columns */
+.footer__col-title {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ferrari-white);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ferrari-border);
+}
+
+.footer__col-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__col-link {
+  font-size: 0.875rem;
+  color: var(--ferrari-gray);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer__col-link::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  background: var(--ferrari-red);
+  transition: width var(--transition-fast);
+}
+
+.footer__col-link:hover {
+  color: var(--ferrari-white);
+  padding-left: 8px;
+}
+.footer__col-link:hover::before { width: 8px; }
+
+/* Bottom */
+.footer__bottom {
+  border-top: 1px solid var(--ferrari-border);
+  padding: 24px 0;
+}
+
+.footer__bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: var(--ferrari-gray-dark);
+}
+
+.footer__bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__bottom-link {
+  font-size: 0.8rem;
+  color: var(--ferrari-gray-dark);
+  transition: color var(--transition-fast);
+}
+.footer__bottom-link:hover { color: var(--ferrari-white); }
+
+@media (max-width: 1200px) {
+  .footer__grid { grid-template-columns: 1fr 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 768px) {
+  .footer__newsletter-inner { flex-direction: column; }
+  .footer__newsletter-input { width: 100%; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__bottom-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; }
+}

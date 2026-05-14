@@ -1,0 +1,246 @@
+.cars__hero-section {
+  padding: 60px 0;
+  background: var(--ferrari-dark);
+}
+
+.cars__hero-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cars__hero-img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  filter: saturate(1.2);
+}
+
+.cars__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.7) 100%);
+}
+
+/* Labels */
+.cars__hero-labels { position: absolute; inset: 0; pointer-events: none; }
+
+.cars__label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cars__label--1 { top: 30%; left: 10%; }
+.cars__label--2 { top: 50%; left: 40%; }
+.cars__label--3 { top: 25%; right: 10%; flex-direction: row-reverse; }
+
+.cars__label-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--ferrari-red);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(220, 0, 0, 0.8);
+  flex-shrink: 0;
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(220, 0, 0, 0.8); }
+  50% { box-shadow: 0 0 20px rgba(220, 0, 0, 1), 0 0 40px rgba(220, 0, 0, 0.4); }
+}
+
+.cars__label-text {
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 4px;
+  padding: 8px 12px;
+  backdrop-filter: blur(10px);
+}
+
+.cars__label-text strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.cars__label-text span {
+  font-size: 0.7rem;
+  color: var(--ferrari-gray);
+}
+
+/* Specs */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.spec-card {
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.spec-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--ferrari-red);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.spec-card:hover { border-color: var(--ferrari-red); transform: translateY(-4px); }
+.spec-card:hover::before { transform: scaleX(1); }
+
+.spec-card__icon {
+  font-size: 1.8rem;
+  color: var(--ferrari-red);
+  margin-bottom: 16px;
+}
+
+.spec-card__value {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--ferrari-white);
+  margin-bottom: 4px;
+}
+
+.spec-card__label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ferrari-red);
+  margin-bottom: 8px;
+}
+
+.spec-card__desc {
+  font-size: 0.8rem;
+  color: var(--ferrari-gray);
+}
+
+/* Power Unit */
+.cars__power-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.power-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.power-spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--ferrari-border);
+  transition: background var(--transition-fast);
+}
+
+.power-spec-row:last-child { border-bottom: none; }
+
+.power-spec-row:hover { background: rgba(220, 0, 0, 0.05); }
+
+.power-spec-row span {
+  font-size: 0.875rem;
+  color: var(--ferrari-gray);
+}
+
+.power-spec-row strong {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.cars__engine-img-wrap { border-radius: 8px; overflow: hidden; }
+.cars__engine-img { width: 100%; object-fit: cover; border-radius: 8px; }
+
+/* Timeline */
+.cars-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.timeline-car { text-align: center; }
+
+.timeline-car__img-wrap {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  aspect-ratio: 4 / 3;
+}
+
+.timeline-car__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  filter: grayscale(30%);
+}
+
+.timeline-car:hover .timeline-car__img {
+  transform: scale(1.05);
+  filter: grayscale(0);
+}
+
+.timeline-car__year {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: var(--ferrari-red);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.timeline-car__model {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 1200px) {
+  .cars-timeline { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1024px) {
+  .specs-grid { grid-template-columns: repeat(2, 1fr); }
+  .cars__power-inner { grid-template-columns: 1fr; gap: 48px; }
+  .cars__label { display: none; }
+}
+@media (max-width: 768px) {
+  .cars-timeline { grid-template-columns: repeat(2, 1fr); }
+  .specs-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .cars-timeline { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,197 @@
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-story__text p {
+  color: var(--ferrari-gray);
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+  padding: 24px;
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+}
+
+.about-stat { text-align: center; }
+
+.about-story__img-wrap {
+  position: relative;
+  border-radius: 8px;
+  overflow: visible;
+}
+
+.about-story__img {
+  width: 100%;
+  border-radius: 8px;
+  filter: saturate(1.1);
+}
+
+.about-story__img-caption {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--ferrari-red);
+  padding: 16px 20px;
+  border-radius: 6px;
+}
+
+.about-story__img-caption strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.about-story__img-caption span {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--ferrari-border);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-item--left { flex-direction: row; }
+.timeline-item--right { flex-direction: row-reverse; }
+
+.timeline-item__content {
+  flex: 1;
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+  padding: 24px;
+  transition: all var(--transition-base);
+}
+
+.timeline-item__content:hover {
+  border-color: var(--ferrari-red);
+  box-shadow: var(--shadow-red);
+}
+
+.timeline-item__dot {
+  width: 16px;
+  height: 16px;
+  background: var(--ferrari-red);
+  border-radius: 50%;
+  border: 3px solid var(--ferrari-black);
+  box-shadow: 0 0 10px rgba(220,0,0,0.6);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.timeline-item__year {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ferrari-red);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.timeline-item__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.timeline-item__desc {
+  font-size: 0.875rem;
+  color: var(--ferrari-gray);
+  line-height: 1.7;
+}
+
+/* Partners */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.partner-card {
+  background: var(--ferrari-card);
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+  padding: 28px;
+  transition: all var(--transition-base);
+}
+
+.partner-card:hover {
+  border-color: var(--ferrari-red);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+}
+
+.partner-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.partner-card__type {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ferrari-red);
+  margin-bottom: 12px;
+}
+
+.partner-card__desc {
+  font-size: 0.85rem;
+  color: var(--ferrari-gray);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .about-story { grid-template-columns: 1fr; gap: 48px; }
+  .about-story__img-caption { position: relative; bottom: auto; right: auto; border-radius: 0 0 8px 8px; }
+}
+@media (max-width: 768px) {
+  .timeline::before { left: 16px; }
+  .timeline-item, .timeline-item--right { flex-direction: column; align-items: flex-start; padding-left: 48px; }
+  .timeline-item__dot { position: absolute; left: 8px; top: 28px; }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .partners-grid { grid-template-columns: 1fr; }
+}

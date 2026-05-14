@@ -1,0 +1,147 @@
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--ferrari-border);
+}
+
+.tab-btn {
+  padding: 14px 32px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--ferrari-gray);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover { color: var(--ferrari-white); }
+.tab-btn.active {
+  color: var(--ferrari-white);
+  border-bottom-color: var(--ferrari-red);
+}
+
+.standings-table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--ferrari-border);
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.standings-table th {
+  background: var(--ferrari-card);
+  padding: 14px 20px;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ferrari-gray);
+  border-bottom: 1px solid var(--ferrari-border);
+}
+
+.standings-table td {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+  transition: background var(--transition-fast);
+}
+
+.standings-table tr:last-child td { border-bottom: none; }
+.standings-table tbody tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+.ferrari-row td {
+  background: rgba(220, 0, 0, 0.05) !important;
+  border-left: 2px solid var(--ferrari-red);
+}
+
+.pos-cell { width: 60px; }
+
+.pos-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.pos-badge--1 { background: var(--ferrari-gold); color: black; }
+.pos-badge--2 { background: #c0c0c0; color: black; }
+.pos-badge--3 { background: #cd7f32; color: white; }
+.pos-badge--4, .pos-badge--5, .pos-badge--6, .pos-badge--7, .pos-badge--8, .pos-badge--9, .pos-badge--10 {
+  background: var(--ferrari-border);
+  color: var(--ferrari-gray);
+}
+
+.driver-cell { font-weight: 600; }
+.wins-cell { color: var(--ferrari-gold); font-weight: 600; }
+.pts-cell {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--ferrari-red);
+}
+
+/* Race Results */
+.race-results-block {
+  border: 1px solid var(--ferrari-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.race-results-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: var(--ferrari-card);
+  border: none;
+  color: var(--ferrari-white);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+
+.race-results-header:hover { background: rgba(220, 0, 0, 0.1); }
+
+.race-detail-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.race-detail-table th {
+  background: rgba(10, 10, 10, 0.5);
+  padding: 10px 20px;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ferrari-gray);
+  border-bottom: 1px solid var(--ferrari-border);
+}
+
+.race-detail-table td {
+  padding: 12px 20px;
+  font-size: 0.875rem;
+  border-bottom: 1px solid rgba(42,42,42,0.4);
+}
+
+.race-detail-table tr:last-child td { border-bottom: none; }
