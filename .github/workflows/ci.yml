@@ -135,7 +135,7 @@ jobs:
         env:
           KUBE_SECRET: ${{ secrets.KUBECONFIG }}
         run: |
-          echo "$KUBE_SECRET" | base64 -d -i > kubeconfig.yaml
+          echo "$KUBE_SECRET" > kubeconfig.yaml
           export KUBECONFIG=kubeconfig.yaml
 
       - name: Update image tags in manifests
