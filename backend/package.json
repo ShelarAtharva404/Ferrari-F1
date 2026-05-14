@@ -8,8 +8,26 @@
     "dev": "nodemon server.js",
     "seed": "node seed/seed.js"
   },
-  "keywords": ["ferrari", "f1", "express", "mongodb"],
+  "keywords": [
+    "ferrari",
+    "f1",
+    "express",
+    "mongodb"
+  ],
   "author": "Ferrari F1 Dev Team",
   "license": "MIT",
-  "engines": { "node": ">=18.0.0" }
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "mongoose": "^9.6.2",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
 }
